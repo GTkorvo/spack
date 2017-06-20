@@ -35,6 +35,8 @@ class Libevpath(CMakePackage):
     homepage = "https://github.com/GTkorvo/evpath"
     url = "https://github.com/GTkorvo/evpath/archive/v4.1.1.tar.gz"
 
+    version('head', git='https://github.com/GTkorvo/evpath.git',
+            branch='master')
     version('4.1.1', '65a8db820f396ff2926e3d31908d123d')
 
     depends_on('libffs')
