@@ -22,26 +22,32 @@
 # License along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 ##############################################################################
+#
+# This is a template package file for Spack.  We've put "FIXME"
+# next to all the things you'll want to change. Once you've handled
+# them, you can save this file and test your package like this:
+#
+#     spack install gtkorvo-enet
+#
+# You can edit this file again by typing:
+#
+#     spack edit gtkorvo-enet
+#
+# See the Spack documentation for more information on packaging.
+# If you submit this package back to Spack as a pull request,
+# please first remove this boilerplate and all FIXME comments.
+#
 from spack import *
 
 
-class Libevpath(CMakePackage):
-    """EVpath is an event transport middleware layer designed to allow
-    for the easy implementation of overlay networks, with
-    active data processing, routing and management at all points
-    in the overlay. EVPath is designed for high performance systems.
-    """
+class GtkorvoEnet(AutotoolsPackage):
+    """ENet reliable UDP networking library.  This is a downstream branch of lsalzman's ENet. This version has expanded the client ID to handle more clients. The original is at http://github.com/lsalzman/enet."""
 
-    homepage = "http://www.cc.gatech.edu/systems/projects/EVPath"
-    url = "https://github.com/GTkorvo/evpath/archive/v4.1.1.tar.gz"
+    homepage = "http://www.github.com/GTkorvo/enet"
+    url      = "https://github.com/GTkorvo/enet/archive/v1.3.13.tar.gz"
 
-    version('head', git='https://github.com/GTkorvo/evpath.git',
-            branch='master')
-    version('4.1.1', '65a8db820f396ff2926e3d31908d123d')
+    version('1.3.13', '3490f924a4d421e4832e45850e6ec142')
 
-    depends_on('libffs')
-    depends_on('gtkorvo-enet')
-
-    def cmake_args(self):
-        args = ["-DENABLE_TESTING=0"]
+    def configure_args(self):
+        args = []
         return args
