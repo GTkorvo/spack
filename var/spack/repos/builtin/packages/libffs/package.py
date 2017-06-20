@@ -33,7 +33,7 @@ class Libffs(CMakePackage):
     and providing complex run-time flexibility.
     """
 
-    homepage = "https://github.com/GTkorvo/ffs"
+    homepage = "http://www.cc.gatech.edu/systems/projects/FFS"
     url = "https://github.com/GTkorvo/ffs/archive/v1.1.tar.gz"
 
     version('head', git='https://github.com/GTkorvo/ffs.git',
@@ -41,6 +41,8 @@ class Libffs(CMakePackage):
     version('1.1', '561c6b3abc53e12b3c01192e8ef2ffbc')
 
     depends_on('gtkorvo-atl')
+    depends_on('gtkorvo-dill')
+    depends_on('gtkorvo-cercs-env')
 
     def cmake_args(self):
         args = ["-DENABLE_TESTING=0"]
