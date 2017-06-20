@@ -37,7 +37,6 @@ class GtkorvoAtl(CMakePackage):
             branch='master')
     version('2.1', 'b2324ff041bccba127330a0e1b241978')
 
-    depends_on('gtkorvo-dill')
     depends_on('gtkorvo-cercs-env')
 
     def cmake_args(self):
