@@ -32,6 +32,8 @@ class GtkorvoCercsEnv(CMakePackage):
     homepage = "http://www.example.com"
     url = "https://github.com/GTkorvo/cercs_env/archive/v1.0.tar.gz"
 
+    version('head', git='https://github.com/GTkorvo/cercs_env.git',
+            branch='master')
     version('1.0', '08f0532d0c2f7bc9b53dfa7a1c40ea4d')
 
     def cmake_args(self):
