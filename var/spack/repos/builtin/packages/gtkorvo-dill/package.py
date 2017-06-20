@@ -34,6 +34,8 @@ class GtkorvoDill(CMakePackage):
     homepage = "https://github.com/GTkorvo/dill"
     url = "https://github.com/GTkorvo/dill/archive/v2.1.tar.gz"
 
+    version('head', git='https://github.com/GTkorvo/dill.git',
+            branch='master')
     version('2.1', '14c835e79b66c9acd2beee01d56e6200')
 
     def cmake_args(self):
