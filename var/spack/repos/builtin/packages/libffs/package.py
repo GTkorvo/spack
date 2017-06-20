@@ -36,6 +36,8 @@ class Libffs(CMakePackage):
     homepage = "https://github.com/GTkorvo/ffs"
     url = "https://github.com/GTkorvo/ffs/archive/v1.1.tar.gz"
 
+    version('head', git='https://github.com/GTkorvo/ffs.git',
+            branch='master')
     version('1.1', '561c6b3abc53e12b3c01192e8ef2ffbc')
 
     depends_on('gtkorvo-atl')
